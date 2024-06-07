@@ -7,26 +7,9 @@ Museum explorers
   "ifid": "C83647C5-5B34-4B5C-B111-5B8743FA1A4D",
   "format": "Harlowe",
   "format-version": "3.3.8",
-  "start": "Museum explorers",
+  "start": "Museum Explorers",
   "zoom": 0.6
 }
-
-
-:: \ ITEM 4 {"position":"1850,800","size":"100,100"}
-(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[The box contains…books!
-
-Does it mean go to Salaborsa Library?. I'll head down to the archaeological sector.
-
-Found it! These clay Gorgons adorned the gutters of Roman houses. Where the heart of the city of Bologna beats today, was also the heart of the Roman city of Bononia. These Gorgons used to adorn a Roman basilica, the place where urban life used to happen.]
-<center>
-<img src="https://tg-image.com/file/29fd1e51804997af10f48.png" width="400" height="386">
-</center>
-(text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
-
-[[Come back to the Archeological Museum |Museo Archeologico]]
-
-(set: $item4 to false )
-
 
 
 :: \ Porta Castiglioni {"position":"1250,1050","size":"100,100"}
@@ -56,6 +39,11 @@ Meet the [(text-colour:lime)[[Real Explorer|Information7]]] of the Etruscan Stat
 <center>
 <img src="https://tg-image.com/file/361226e86d41435b0273e.png" width="370" height="400">
 </center>
+=|=
+[[Head to Porta San Mamolo. → | Porta San Mamolo]]
+=|=
+[[Head to Porta Santo Stefano. ← | Porta Santo Stefano]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
@@ -88,10 +76,12 @@ Meet the [(text-colour:lime)[[Real Explorer|Information1]]] of the Floor Mosaic!
 <center>
 <img src="https://tg-image.com/file/b1c94888156dd4a32dfe5.jpg" width="400" height="402">
 </center>]
-
+=|=
+[[Head to Porta Mascarella. → | Porta Mascarella]]
+=|=
+[[Head to Porta Lame. ← | Porta Lame]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
-
-
 
 
 :: \ Porta Lame {"position":"1050,375","size":"100,100"}
@@ -99,18 +89,17 @@ Meet the [(text-colour:lime)[[Real Explorer|Information1]]] of the Floor Mosaic!
 [(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[I am at Porta Lame.
 This gate is very beautiful. But unfortunately, I didn't find any artifacts for the Archaeological Museum. 
 
-Perhaps I need tools that I don't have. I will try other gates.]
+(if: $tools is false)[Perhaps I need tools that I don't have. I will try other gates.]]
 
+(if: $tools is true)
+[(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[Let's see what we find here.
+(text-colour:#c85656)[[[Use the excavation tools. |ITEM 12]]]]]
 =|=
 [[Head to Porta Galliera. → | Porta Galliera]]
 =|=
 [[Head to Porta San Felice. ← | Porta San Felice]]
 |==|
-(align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]
-
-(if: $tools is true)
-[(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[Let's see what we find here.
-(text-colour:#c85656)[[[Use the excavation tools. |ITEM 12]]]]]]
+(align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]]
 
 (else:)
 [(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[I am at Porta Lame.
@@ -121,7 +110,11 @@ Meet the [(text-colour:lime)[[Real Explorer|Information12]]] of the Clay Vase!
 <center>
 <img src="https://tg-image.com/file/b1e231c5a1283ced83136.png" width="400" height="319">
 </center>]
-
+=|=
+[[Head to Porta Galliera. → | Porta Galliera]]
+=|=
+[[Head to Porta San Felice. ← | Porta San Felice]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
@@ -155,7 +148,11 @@ Meet the [(text-colour:lime)[[Real Explorer|Information5]]] of the Nymph Sculptu
 <center>
 <img src="https://tg-image.com/file/8c2089b51c59bc90f677b.png" width="691" height="300">
 </center>
-
+=|=
+[[Head to Porta Santo Stefano. → | Porta Santo Stefano]]
+=|=
+[[Head to Porta San Vitale. ← | Porta San Vitale]]
+|==|
 [[Come back the to Archeological Museum |Museo Archeologico]]]
 
 
@@ -177,11 +174,15 @@ This gate is very beautiful. But unfortunately, I didn't find any artifacts for 
 I've already been at this Gate.
 The artifact was already collected.
 
-Meet the [(text-colour:lime)[[Real Explorer|Information2]]] of Animal Vase!
+Meet the [(text-colour:lime)[[Read about|Information2]]] the Animal Vase!
 <center>
 <img src="https://tg-image.com/file/eb1f3b8723c10a4d0f1ed.png" width="450" height="350">
 </center>]
-
+=|=
+[[Head to Porta San Donato. → | Porta San Donato]]
+=|=
+[[Head to Porta Galliera. ← | Porta Galliera]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
@@ -208,7 +209,7 @@ Sure, I can help you. Let's head there.
 I've already been at this Gate.
 The artifact was already collected.
 
-Meet the [(text-colour:lime)[[Real Explorer|Information3]]] of the Gemini Horses!
+Meet the [(text-colour:lime)[[Read about|Information3]]] the Gemini Horses!
 <center>
 <img src="https://tg-image.com/file/33a167f85253c9f4d7adf.png" width="400" height="342">
 </center>]
@@ -219,12 +220,6 @@ Meet the [(text-colour:lime)[[Real Explorer|Information3]]] of the Gemini Horses
 [[ Head to Porta Mascarella. ←| Porta Mascarella]]
 |==|
 (align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]]
-
-
-
-
-
-
 
 
 :: \ Porta San Felice {"position":"925,550","size":"100,100"}
@@ -251,22 +246,27 @@ Meet the [(text-colour:lime)[[Real Explorer|Information11]]] of the Gallic Helme
 <center>
 <img src="https://tg-image.com/file/eb64d07a561839f3a7618.png" width="336" height="420">
 </center>]
-
+=|=
+[[Head to Porta Lame. → | Porta Lame]]
+=|=
+[[Head to Porta Sant'Isaia. ← | Porta Sant'Isaia]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
 :: \ Porta San Mamolo {"position":"1050,1025","size":"100,100"}
 (if: $item8 is true)[(align:"<==")+(box:"=XXXXXXXXXXXXXXXXXX=")[I am at Porta San Mamolo.
 
-''Tlin tlin tlin''
+ (if: $tools is false)[''Tlin tlin tlin''
 //Hello? Po.. Police? I'm sorry, I think it is a mistake, I haven't committed any crime... 
 Of course! I can help you. Wait... do you mean?... Should I go to the Military Arsenal south of the wall? 
 I am at Porta San Mamolo, it's just across the street. Is there any archaeological settlement?//
 
-Ok. To do it I need some (text-colour:#99e9f2)[excavation tools].
+Ok. To do it I need some (text-colour:blue)[excavation tools].]
 
  (if: $tools is true)
 [Hello, officer? I'm coming.
+
 (text-colour:#c85656)[[[Let's go to the Military Arsenal. |ITEM 8]]]]
 =|=
 [[Head to Porta Saragozza. → | Porta Saragozza]]
@@ -285,8 +285,15 @@ Meet the [(text-colour:lime)[[Real Explorer|Information8]]] of the Bronza Bell!
 <center>
 <img src="https://tg-image.com/file/be8b204ecfe93b38b18e7.png" width="371" height="400">
 </center>
-
+=|=
+[[Head to Porta Saragozza. → | Porta Saragozza]]
+=|=
+[[Head to Porta Castiglioni. ← | Porta Castiglioni]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
+
+ (if: $tools is false)[<audio src="https://raw.githubusercontent.com/Museum-Explorers/InteractionMediaDesign/main/Audio.mp3
+" autoplay></audio>]
 
 
 :: \ Porta San Vitale {"position":"1700,775","size":"100,100"}
@@ -297,16 +304,16 @@ This gate is very beautiful. But unfortunately, I didn't find any artifacts for 
 
 That box on the sidewalk isn't part of the gate. It's quite heavy and hard to open. What's inside?]
 
+(if: $hammer is true)
+[Kids, never do it with any heritage object, please.
+(text-colour:#c85656)[[[Use the hammer. |ITEM 4]]]]
+
 =|=
 [[Head to Porta Maggiore. → | Porta Maggiore]]
 =|=
 [[Head to Porta San Donato. ← | Porta San Donato]]
 |==|
-(align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]
-
-(if: $hammer is true)
-[Kids, never do it with any heritage object, please.
-(text-colour:#c85656)[[[Use the hammer. | ITEM 4]]]]]
+(align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]]
 
 (else:)
 [(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[I am at Porta San Vitale.
@@ -317,7 +324,11 @@ Meet the [(text-colour:lime)[[Real Explorer|Information4]]] of the Clay Gorgons!
 <center>
 <img src="https://tg-image.com/file/29fd1e51804997af10f48.png" width="400" height="386">
 </center>
-
+=|=
+[[Head to Porta Maggiore. → | Porta Maggiore]]
+=|=
+[[Head to Porta San Donato. ← | Porta San Donato]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
@@ -339,8 +350,6 @@ Wait....
 |==|
 (align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]]
 
-
-
 (else:)
 [(align:"<==")+(box:"=XXXXXXXXXXXXXXXXXX=")[I am at Porta Sant'Isaia.
 I've already been at this Gate.
@@ -350,7 +359,11 @@ Meet the [(text-colour:lime)[[Real Explorer|Information10]]] of the Vase with Br
 <center>
 <img src="https://tg-image.com/file/8a2848f21df2c126963c9.png" width="460" height="400">
 </center>]
-
+=|=
+[[Head to Porta San Felice. → | Porta San Felice]]
+=|=
+[[Head to Porta Saragozza. ← | Porta Saragozza]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
@@ -384,7 +397,11 @@ Meet the [(text-colour:lime)[[Real Explorer|Information6]]] of Felsina Lion!
 <center>
 <img src="https://tg-image.com/file/d450b1e2da8f5f77cc37c.png" width="450" height="334">
 </center>
-
+=|=
+[[ Head to Porta Castiglioni. → | Porta Castiglioni]]
+=|=
+[[ Head to Porta Maggiore. ← | Porta Maggiore]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
@@ -405,8 +422,6 @@ Something tells me that one of the artifacts is here. But an excavationwill be h
 |==|
 (align:"==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[(text-colour:#74c0fc)[[[Come back to the Archeological Museum |Museo Archeologico]]]]]
 
-
-
 (else:)
 [(align:"<==")+(box:"=XXXXXXXXXXXXXXXXXX=")[I am at Porta Saragozza.
 I've already been at this Gate.
@@ -416,24 +431,39 @@ Meet the [(text-colour:lime)[[Real Explorer|Information9]]] of the Bronze Age Es
 <center>
 <img src="https://tg-image.com/file/0894976ca3cc4423c989b.png" width="225" height="420">
 </center>]
-
+=|=
+[[Head to Porta Sant'Isaia. → | Porta Sant'Isaia]]
+=|=
+[[Head to Porta San Mamolo. ← | Porta San Mamolo]]
+|==|
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
 :: Antonio {"position":"2100,800","size":"100,100"}
+<center>
+<img src="https://tg-image.com/file/54001eac462bfc2ef4e11.jpg" width="300" height="300">
+</center>
+
 Born in Faenza, Zannoni began his engineering career in Bologna, where his work often intersected with his passion for archaeology. His notable discoveries include the Etruscan Certosa Necropolis and the "San Francesco repository," a Villanovan phase deposit with over 14,000 bronze pieces. A key item from his discoveries is the large earthenware pot known as "the San Francesco repository."
 
 
 :: Edoardo Brizio {"position":"2100,700","size":"100,100"}
+<center>
+<img src="https://tg-image.com/file/44c148f1709ddd8bfe5f1.jpg" width="300" height="300">
+</center>
+
 A graduate of Italy's first school of archaeology in Pompeii, Brizio brought his expertise to Bologn. He played a crucial role in uniting the city's archaeological collections and opening the new Civic Museum in 1881. His excavations, such as the Etruscan Benacci Caprara and Giardini Margherita Necropolises, were extensively studied and published. One significant artifact from his work is the sandstone sculpture of a lion from the Giardini Margherita Necropolis.
 
 
 :: Giovanni Maria {"position":"2100,900","size":"100,100"}
+<center>
+<img src="https://tg-image.com/file/be3e6033eb72ae025cb13.jpg" width="300" height="300">  <img src="https://tg-image.com/file/ac9ce305532e0ef9807b4.jpg" width="300" height="300">
+</center>
+
 Giovanni Gozzadini and his wife Maria Teresa di Serego Allighieri were a reference point for social, cultural and political life in the city. The Count, after his pioneering discovery of the necropolis of Villanova di Castenaso (1853), became a very well known person in the world of archeological studies. He was also a political man, in fact he was governmental Commissioner for the Museums and Excavations of the regions of Emilia and Marche and the General Director of the Civic Museum of Bologna.
 The first tracer of an ancient burial ground came to light on 18th May 1853, near Villanova, in the Gozzadini’s Villa. The excavations, conducted by Gozzadini and Maria Teresa, unearthed a necropolis of 193 tombs. This discovery underlined an extremely important moment for archeological studies. 
 Maria Teresa, skilled and elegant draughtsman, surveyed tombs and grave goods found in the Villanova estates; improvising as a restorer, she cleaned and restored fragmentary archaeological finds.
 After this discovery he undertook many other archeological ventures also located in Bologna, like the Roman aqueduct, with Antonio Zannoni, and Etruscan Town in Marzabotto.
-
 
 
 :: ITEM 1 {"position":"1500,225","size":"100,100"}
@@ -446,12 +476,12 @@ There's a lot of dirt covering them. I need a gentle tool to remove it, or I'll 
 =|=
 [[Head to Porta Lame. ← | Porta Lame]]
 |==|
+
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 (else:)
 [Now I have a brush to remove the dirt.
 [[Use the brush softly |ITEM 1-2]]]
-
 
 
 :: ITEM 1-1 {"position":"1300,175","size":"100,100"}
@@ -466,10 +496,15 @@ It's too crowded. It's impossible to find anything here.
 <img src="https://tg-image.com/file/b1c94888156dd4a32dfe5.jpg" width="400" height="402">
 </center>
 (text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
-Congratulations! You have acquired (text-colour:yellow)[Excavation tools! ]
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $item1 to false )
-(set: $tools to true)
+Congratulations! You have acquired (text-colour:blue)[Excavation tools]!
+<center><img src="https://www.med-eng.com/wp-content/uploads/2019/08/Non-Magnetic-Excavation-Kit-Med-Eng-Laid-Out-e1636398065924.png" width="100" height="100"></center>
+
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number1)
+
+[[Let's go|input1]]
+
 
 
 :: ITEM 10 {"position":"725,725","size":"100,100"}
@@ -480,14 +515,19 @@ Found it! This Etruscan vase is filled with bronze pieces! Various types of weap
 <img src="https://tg-image.com/file/8a2848f21df2c126963c9.png" width="460" height="400">
 </center>
 (text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
-Congratulations! You have acquired (text-colour:yellow)[Brush! ]
+Congratulations! You have acquired (text-colour:blue)[Paint Brush]!
+<center><img src="https://i.pinimg.com/originals/54/28/5f/54285fb23cca6d2ab30f70fbabae5e26.png" width="100" height="128"></center>
 
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $item10 to false )
-(set: $brush to true)
+ ''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number10)
+
+[[Let's go|input10]]
 
 
-:: ITEM 11 {"position":"775,475","size":"100,100"}
+
+
+:: ITEM 11 {"position":"800,475","size":"100,100"}
 I haven't found much.
 
 [[Continue along the road. |ITEM 11]]
@@ -495,7 +535,6 @@ I haven't found much.
 [[Deviate from the route. |ITEM 11]]
 
 (set: $map to true)
-
 
 
 :: ITEM 12 {"position":"900,300","size":"100,100"}
@@ -506,9 +545,14 @@ Whoever created this vase lived here many years ago; I dare say in the Neolithic
 <img src="https://tg-image.com/file/b1e231c5a1283ced83136.png" width="400" height="319">
 </center>
 (text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
-[[Wait...|ITEM 2]]
 
-(set: $item12 to false )
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number12)
+
+[[Let's go|input12]]
+
+
 
 
 :: ITEM 2 {"position":"1700,325","size":"100,100"}
@@ -522,10 +566,14 @@ This animal-shaped vase is a bit more refined than the previous one. But it appe
 
 This artifact probably had some connection with Porta Mascarella. Luckily, I found it; and also a lantern on the floor.
 
-Congratulations! You have acquired (text-colour:yellow)[Lantern! ]
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $lantern to true)
-(set: $item2 to false )
+Congratulations! You have acquired (text-colour:blue)[Lantern! ]
+<center><img src="https://pngimg.com/uploads/lantern/lantern_PNG11.png" width="100" height="100"></center>
+
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number2)
+
+[[Let's go|input2]]
 
 
 
@@ -536,8 +584,33 @@ Congratulations! You have acquired (text-colour:yellow)[Lantern! ]
 </center>
 (text-colour:orange)[Congratulations! You collected an item for the Archaeological Museum! ]
 
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $item3 to false )
+
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number3)
+
+[[Let's go|input3]]
+
+
+
+:: ITEM 4 {"position":"1850,800","size":"100,100"}
+(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[The box contains…books!
+
+Does it mean go to Salaborsa Library?. I'll head down to the archaeological sector.
+
+Found it! These clay Gorgons adorned the gutters of Roman houses. Where the heart of the city of Bologna beats today, was also the heart of the Roman city of Bononia. These Gorgons used to adorn a Roman basilica, the place where urban life used to happen.]
+<center>
+<img src="https://tg-image.com/file/29fd1e51804997af10f48.png" width="400" height="386">
+</center>
+(text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
+
+
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number4)
+
+[[Let's go|input4]]
+
 
 
 :: ITEM 5 {"position":"1700,1075","size":"100,100"}
@@ -552,8 +625,7 @@ I need (text-colour:blue)[excavation tools].
 [[Come back to the Archeological Museum |Museo Archeologico]]]
 
 
-
-:: ITEM 6 {"position":"1450,1200","size":"100,100"}
+:: ITEM 6 {"position":"1425,1200","size":"100,100"}
 This lion has some decorative elements that are Etruscan, but the influence of Greek art reveals that this lion was sculpted in a later period, after contact and cultural exchange between these peoples.
 I'll take it to the Museum.
 <center>
@@ -561,27 +633,35 @@ I'll take it to the Museum.
 </center>
 
 (text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
-Congratulations! You have acquired (text-colour:yellow)[Magnifying Glass! ]
+Congratulations! You have acquired (text-colour:blue)[Magnifying Glass! ]
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Magnifying_glass_icon_mgx2.svg/1200px-Magnifying_glass_icon_mgx2.svg.png" width="100" height="98"></center>
 
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $glasses to true)
-(set: $item6 to false )
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number6)
+
+[[Let's go|input6]]
 
 
 
 
-:: ITEM 7 {"position":"1225,1200","size":"100,100"}
+:: ITEM 7 {"position":"1150,1200","size":"100,100"}
 (align:"<==")+(box:"=XXXXXXXXXXXXXXXXXX=")[This Etruscan statue was buried here in San Petronio Vecchio Street. Now, it was adorning an abandoned garden. I'll return it to the museum.
 <center>
 <img src="https://tg-image.com/file/361226e86d41435b0273e.png" width="370" height="400">
 </center>
-(text-colour:orange)[''Congratulations! You have collected an item for the Archaeological Museum!'' ]]
+(text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]]
 
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $item7 to false )
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number7)
+
+[[Let's go|input7]]
 
 
-:: ITEM 8 {"position":"925,1175","size":"100,100"}
+
+
+:: ITEM 8 {"position":"875,1150","size":"100,100"}
 Exactly, General! Beneath this Military Arsenal lies a great number of archaeological artifacts from Felsina, the Etruscan Bologna. This decorated bronze bell shows that this was once a very noble part of the Etruria Padana region.
 
 Looking at the map, it's just below the Bolognese Apennines. Surely, the mountains also hide their secrets.
@@ -591,10 +671,13 @@ Looking at the map, it's just below the Bolognese Apennines. Surely, the mountai
 
 (text-colour:orange)[Congratulations! You have collected another item for the Archaeological Museum! ]
  
-[[Come back to the Archeological Museum |Museo Archeologico]]
+ ''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number8)
 
-(set: $brush to true)
-(set: $item8 to false )
+[[Let's go|input8]]
+
+
 
 
 :: ITEM 9 {"position":"775,975","size":"100,100"}
@@ -604,11 +687,15 @@ This bronze statue is very ancient! It resembles other statues found throughout 
 </center>
 
 (text-colour:orange)[Congratulations! You have collected another item for the Archaeological Museum! ]
-Congratulations! You have acquired (text-colour:yellow)[Hammer! ]
+Congratulations! You have acquired (text-colour:blue)[Hammer! ]
+<center><img src="https://purepng.com/public/uploads/large/purepng.com-hammerhammerscoldstrike-agairon-hammer-1701527869944m523s.png" width="158" height="88"></center>
  
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $hammer to true)
-(set: $item9 to false )
+ ''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number9)
+
+[[Let's go|input9]]
+
 
 
 :: ITEM-11 {"position":"650,550","size":"100,100"}
@@ -621,11 +708,16 @@ I imagine these peoples clashed in many conflicts.
 <img src="https://tg-image.com/file/eb64d07a561839f3a7618.png" width="336" height="420">
 </center>
 (text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
-Congratulations! You have acquired (text-colour:yellow)[Map! ]
+Congratulations! You have acquired(text-colour:blue)[ Map]!
+<center><img src="https://tg-image.com/file/a113606d049275457336b.png" width="129" height="120"></center>
 
-[[Come back to the Archeological Museum |Museo Archeologico]]
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number11)
 
-(set: $item11 to false )
+[[Let's go|input11]]
+
+
 
 
 :: ITEM-5 {"position":"1700,1200","size":"100,100"}
@@ -635,8 +727,12 @@ Congratulations! You have acquired (text-colour:yellow)[Map! ]
 </center>
 (text-colour:orange)[Congratulations! You have collected an item for the Archaeological Museum! ]
 
-[[Come back to the Archeological Museum |Museo Archeologico]]
-(set: $item5 to false )
+''Find the artifact inside the museum and insert its display number.''
+//Hint: Try zero if there is no number.//:
+(input: bind $number5)
+
+[[Let's go|input5]]
+
 
 
 :: Information1 {"position":"1325,425","size":"100,100"}
@@ -678,12 +774,6 @@ This tomb is an example of the Etruscanization of the upper echelons of Gallic s
 [[Come back to the Archeological Museum |Museo Archeologico]]
 
 
-
-
-
-
-
-
 :: Information12 {"position":"1175,450","size":"100,100"}
 (align:"=><=")+(box:"XXXXXXXXXXXXXXXXXX=")[Burial kit 
 Prehistoric collection]
@@ -694,10 +784,6 @@ The tomb, found with three others of the same period, is characterized by the ri
 </center>
 
 [[Come back to the Archeological Museum |Museo Archeologico]]
-
-
-
-
 
 
 :: Information2 {"position":"1450,500","size":"100,100"}
@@ -790,7 +876,6 @@ Trapezoidal pendants, typical of Etruria Padana, take their name from the early 
 [[Come back to the Archeological Museum |Museo Archeologico]]
 
 
-
 :: Information9 {"position":"1025,825","size":"100,100"}
 (align:"=><=")+(box:"XXXXXXXXXXXXXXXXXX=")[Anthropomorphic figure 
 Prehistoric collection]
@@ -803,10 +888,12 @@ Among the materials found at Villa Cassarini, several objects referable to the P
 [[Come back to the Archeological Museum |Museo Archeologico]]
 
 
-
-
 :: Museo Archeologico {"position":"1275,700","size":"100,100"}
-(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[This museum is amazing! I will find the artifacts and return them to their rightful places. My instincts tell me I should head towards one of the city gates to investigate the surroundings.
+(align:"<==>")+(box:"=XXXXXXXXXXXXXXXXXX=")[This museum is amazing! I will find the artifacts and return them to the places they belong. My instincts tell me I should head towards one of the city gates to investigate the surroundings.
+
+(if:  $item1 is false and $item2 is false and $item3 is false and $item4 is false and $item5 is false and $item6 is false and $item7 is false and $item8 is false and $item9 is false and $item10 is false and $item11 is false and $item12 is false)
+ [[[IS THIS A PASSWORD TO A VAULT? |Password]]]
+
 
 (if: $item1 is true)[[[Head to Porta Galliera. | Porta Galliera]]](else:)[(text-colour:#c85656)[[Head to Porta Galliera. | Porta Galliera]]]
 (if: $item2 is true)[[[Head to Porta Mascarella. | Porta Mascarella]]](else:)[(text-colour:#c85656)[[Head to Porta Mascarella. | Porta Mascarella]]]
@@ -829,42 +916,22 @@ Among the materials found at Villa Cassarini, several objects referable to the P
 (if: $glasses is true)[[[See the Magnifying Glass|glasses]]]
 
 
+:: Museum Explorers {"position":"300,100","size":"100,100"}
+(align:"=><=")+(box:"=XXXXXXXXXXXXXXXXXX=")[[[''MUSEUM EXPLORERS'' |start]]]
 
 
-:: Museum explorers {"position":"500,100","size":"100,100"}
-(text-colour:#845ef7)[Friend: Did you see the news today? They're saying that some artifacts from the Archaeological Museum have disappeared!]
+:: Password {"position":"2100,1050","size":"100,100"}
+If i use all the display numbers of all the items in order, I may open this vault!
+(input: bind $pass)
 
-What? The museum was robbed?
+[[I hope it works!|pass]]
 
-(text-colour:#845ef7)[Friend: It seems it wasn’t a robbery. The building wasn’t broken into, and the security cameras didn’t capture anything.]
 
-How strange...
+:: REWARD! {"position":"1975,1200","size":"100,100"}
+<center>
+<img src="https://i.pinimg.com/originals/29/1d/2e/291d2e3ce9e6167dea0a4f6c3aa8d17a.png" width="600" height="821">
+</center>
 
-(text-colour:#845ef7)[Friend: Haven’t they called you yet? You know.. you are a ''Museum Explorer!'']
-
-HEY! I have nothing to do with this!
-
-[[Look at the newspaper |newspaper]]
-
-(set: $lantern to false)
-(set: $tools to false)
-(set: $glasses to false)
-(set: $brush to false)
-(set: $hammer to false)
-(set: $map to false)
-
-(set: $item1 to true )
-(set: $item2 to true )
-(set: $item3 to true )
-(set: $item4 to true )
-(set: $item5 to true )
-(set: $item6 to true )
-(set: $item7 to true )
-(set: $item8 to true )
-(set: $item9 to true )
-(set: $item10 to true )
-(set: $item11 to true )
-(set: $item12 to true )
 
 
 :: brush {"position":"275,625","size":"100,100"}
@@ -898,7 +965,6 @@ Who am I?
 |==|
 
 
-
 :: glasses {"position":"275,1100","size":"100,100"}
 [[Come back to the Archeological Museum |Museo Archeologico]]
 
@@ -909,6 +975,137 @@ Who am I?
 [[Come back to the Archeological Museum |Museo Archeologico]]
 
 <img src="https://purepng.com/public/uploads/large/purepng.com-hammerhammerscoldstrike-agairon-hammer-1701527869944m523s.png" width="632" height="350">
+
+
+:: input1 {"position":"1550,100","size":"100,100"}
+(if: $number1 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item1 to false )
+(set: $tools to true)]
+
+(if: $number1 is not "1")[This is not the right number...
+[[Try again |ITEM 1-2]]]
+
+
+
+:: input10 {"position":"600,750","size":"100,100"}
+(if: $number10 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item10 to false )
+(set: $brush to true)]
+
+(if: $number10 is not "1")[This is not the right number...
+[[Try again |ITEM 10]]]
+
+
+:: input11 {"position":"600,425","size":"100,100"}
+(if: $number11 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item11 to false )]
+
+(if: $number11 is not "1")[This is not the right number...
+[[Try again |ITEM-11]]]
+
+
+:: input12 {"position":"775,300","size":"100,100"}
+(if: $number12 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Wait...|ITEM 2]]
+
+(set: $item12 to false )]
+
+(if: $number12 is not "1")[This is not the right number...
+[[Try again |ITEM 12]]]
+
+
+:: input2 {"position":"1825,300","size":"100,100"}
+(if: $number2 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $lantern to true)
+(set: $item2 to false )]
+
+(if: $number2 is not "1")[This is not the right number...
+[[Try again |ITEM 2]]]
+
+
+
+
+
+:: input3 {"position":"1975,525","size":"100,100"}
+(if: $number3 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item3 to false )]
+
+(if: $number3 is not "1")[This is not the right number...
+[[Try again |ITEM 3]]]
+
+
+:: input4 {"position":"1975,800","size":"100,100"}
+(if: $number4 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item4 to false )]
+
+(if: $number4 is not "1")[This is not the right number...
+[[Try again |ITEM 4]]]
+
+
+:: input5 {"position":"1825,1100","size":"100,100"}
+(if: $number5 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item5 to false )]
+
+(if: $number5 is not "1")[This is not the right number...
+[[Try again |ITEM-5]]]
+
+
+:: input6 {"position":"1550,1200","size":"100,100"}
+(if: $number6 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $glasses to true)
+(set: $item6 to false )]
+
+(if: $number6 is not "1")[This is not the right number...
+[[Try again |ITEM 6]]]
+
+
+:: input7 {"position":"1275,1200","size":"100,100"}
+(if: $number7 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $item7 to false )]
+
+(if: $number7 is not "1")[This is not the right number...
+[[Try again |ITEM 7]]]
+
+
+:: input8 {"position":"1000,1175","size":"100,100"}
+(if: $number8 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $brush to true)
+(set: $item8 to false )]
+
+(if: $number8 is not "1")[This is not the right number...
+[[Try again |ITEM 8]]]
+
+
+:: input9 {"position":"650,1000","size":"100,100"}
+(if: $number9 is "1")[ SUCCESS! Let's find another artifact!
+
+[[Come back to the Archeological Museum |Museo Archeologico]]
+(set: $hammer to true)
+(set: $item9 to false )]
+
+(if: $number9 is not "1")[This is not the right number...
+[[Try again |ITEM 9]]]
 
 
 :: introduction {"position":"1100,100","size":"100,100"}
@@ -935,6 +1132,8 @@ I see that the twelve gates of the city are marked on the map.
 :: map {"position":"275,825","size":"100,100"}
 [[Come back to the Archeological Museum |Museo Archeologico]]
 
+<img src="https://tg-image.com/file/a113606d049275457336b.png" width="600" height="516">
+
 
 :: map of Bologna {"position":"275,525","size":"100,100"}
 [[Come back to the Archeological Museum |Museo Archeologico]]
@@ -942,15 +1141,62 @@ I see that the twelve gates of the city are marked on the map.
 <img src="https://tg-image.com/file/8863ef89fd9244af56ab8.png" width="1000" height="697">
 
 
-
 :: newspaper {"position":"700,100","size":"100,100"}
 ''Tlin tlin tlin''
 //Hello? Hello? Archaeological Museum? Yes, I’m fine. Yes, I saw it in the news. Alright. I'm on my way! 
 //
 
-[[Go to the Archeological Museum |characters]]
+(live: 3s)[[[Go to the Archeological Museum |characters]]]
 
-<audio src=”https://od.lk/d/OTRfODAyMzI0Mzhf/videoplayback.mp3" autoplay>
+<audio src="https://raw.githubusercontent.com/Museum-Explorers/InteractionMediaDesign/main/Audio.mp3
+" autoplay></audio>
+
+
+:: pass {"position":"2100,1200","size":"100,100"}
+(if: $pass is "111111111111")[ WOW! IT IS A REWARD!!
+
+//Show this final page to any museum staff!//
+
+[[REWARD!]]]
+
+(if: $pass is not "111111111111")[This is not the right number...
+[[Try again |Password]]]
+
+
+:: start {"position":"500,100","size":"100,100"}
+(text-colour:#845ef7)[Friend: Did you see the news today? They're saying that some artifacts from the Archaeological Museum have disappeared!]
+
+What? The museum was robbed?
+
+(text-colour:#845ef7)[Friend: It seems it wasn’t a robbery. The building wasn’t broken into, and the security cameras didn’t capture anything.]
+
+How strange...
+
+(text-colour:#845ef7)[Friend: Haven’t they called you yet? You know.. you are a ''Museum Explorer!'']
+
+HEY! I have nothing to do with this!
+
+[[Look at the newspaper |newspaper]]
+
+(set: $lantern to false)
+(set: $tools to false)
+(set: $glasses to false)
+(set: $brush to false)
+(set: $hammer to false)
+(set: $map to false)
+
+(set: $item1 to true )
+(set: $item2 to true )
+(set: $item3 to true )
+(set: $item4 to true )
+(set: $item5 to true )
+(set: $item6 to true )
+(set: $item7 to true )
+(set: $item8 to true )
+(set: $item9 to true )
+(set: $item10 to true )
+(set: $item11 to true )
+(set: $item12 to true )
 
 
 :: tools {"position":"275,925","size":"100,100"}
